@@ -46,11 +46,17 @@ function currentWeather(response) {
   const city = response.data.city;
   const temperature = Math.round(response.data.temperature.current);
   const descriptionElement = document.querySelector("#description");
+  const humidityElement = document.querySelector("#humidity");
+  const windSpeedElement = document.querySelector("#windspeed");
 
   newCity.innerHTML = city;
   newTemperature.innerHTML = `${temperature}`;
   const description = response.data.condition.description;
   descriptionElement.innerHTML = `,${description}`;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
+
+  console.log(response.data);
 }
 
 // Add submit event listener to the form
