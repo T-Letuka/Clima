@@ -1,5 +1,6 @@
 //for the actual day
-let days = [
+// Days of the week array
+const days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -8,46 +9,52 @@ let days = [
   "Friday",
   "Saturday",
 ];
-let currentDate = new Date();
 
-let actualDayIndex = currentDate.getDay();
-let actualDay = days[actualDayIndex];
+// Get current date and time
+const currentDate = new Date();
+const actualDayIndex = currentDate.getDay();
+const actualDay = days[actualDayIndex];
 
 let hour = currentDate.getHours();
 let minutes = currentDate.getMinutes();
 
+// Add leading zeros to single-digit hours and minutes
 hour = hour < 10 ? "0" + hour : hour;
 minutes = minutes < 10 ? "0" + minutes : minutes;
 
-let actaulTime = `${hour}:${minutes}`;
+const actualTime = `${hour}:${minutes}`;
 
-let currentDay = document.getElementById("actual-day");
-currentDay.innerHTML = `${actualDay} ${actaulTime}`;
+// Update HTML element with current day and time
+const currentDay = document.getElementById("actual-day");
+currentDay.innerHTML = `${actualDay} ${actualTime}`;
 
-//SEARCH FORM AND TEMPERATURE
-let form = document.getElementById("search-form");
+// Search form and temperature
+const form = document.getElementById("search-form");
+
 function submitButton(event) {
   event.preventDefault();
 
-  let cityInput = document.getElementById("input-search").value;
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput}&key=${apiKey}`;
+  const cityInput = document.getElementById("input-search").value;
+  const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput}&key=${apiKey}`;
 
   axios.get(apiUrl).then(currentWeather);
 }
 
 function currentWeather(response) {
-  console.log(response.data);
-  let newCity = document.querySelector("#new-city");
-  let newTemperature = document.querySelector("#new-temperature");
-  let city = response.data.city;
-  let temperature = Math.round(response.data.temperature.current);
+  const newCity = document.querySelector("#new-city");
+  const newTemperature = document.querySelector("#new-temperature");
+  const city = response.data.city;
+  const temperature = Math.round(response.data.temperature.current);
+  const descriptionElement = document.querySelector("#description");
 
   newCity.innerHTML = city;
   newTemperature.innerHTML = `${temperature}`;
+  const description = response.data.condition.description;
+  descriptionElement.innerHTML = `,${description}`;
 }
-form.addEventListener("submit", function (event) {
-  submitButton(event);
-});
 
+// Add submit event listener to the form
+form.addEventListener("submit", submitButton);
+
+// API key
 let apiKey = "06e466583a141dtb4eba022fc8fboc4e";
-let city = "Paris";
