@@ -1,0 +1,110 @@
+body {
+  display: block;
+  margin: 20px;
+}
+
+.weather-app {
+  position: relative;
+  display: block;
+  margin: 70px auto;
+  max-width: 600px;
+  padding: 30px;
+  border: 5px solid #1e22f398;
+  box-shadow: 2px 2px #875df14a;
+  border-radius: 10px;
+}
+.current-weather {
+  display: block;
+}
+
+.madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 45px;
+}
+
+#button {
+  padding: 15px;
+  border-radius: 15px;
+  border: #dadde1 1px solid;
+  outline: none;
+  color: whitesmoke;
+  background-color: #885df1;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.input-search {
+  background-color: #dadde196;
+  width: 80%;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #dadde1;
+  outline: none;
+}
+
+.current-temp {
+  display: block;
+  position: relative;
+  right: -350px;
+  top: -125px;
+  margin: 0 0 10px 0;
+}
+
+.current-temp-icon {
+  position: relative;
+  top: -10px;
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+.current-temp-text {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.current-temp-degrees {
+  position: relative;
+  top: -38px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+strong {
+  color: rgba(255, 0, 0, 0.583);
+}
+
+.day {
+  display: block;
+  font-weight: 300;
+  font-size: 18px;
+  color: #27282980;
+}
+
+p {
+  color: #2a2b2ed3;
+}
+
+a {
+  color: #875df1af;
+}
+
+footer {
+  border-top: 1px solid rgba(128, 128, 128, 0.104);
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  box-sizing: border-box;
+  display: block;
+}
