@@ -48,6 +48,8 @@ function currentWeather(response) {
   const descriptionElement = document.querySelector("#description");
   const humidityElement = document.querySelector("#humidity");
   const windSpeedElement = document.querySelector("#windspeed");
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" alt="weather-icon"/>`;
 
   newCity.innerHTML = city;
   newTemperature.innerHTML = `${temperature}`;
