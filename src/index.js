@@ -61,6 +61,23 @@ function currentWeather(response) {
   console.log(response.data);
 }
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
+
+  days.forEach(function (day) {
+    forecast.innerHTML += `
+      <div class="forecast-day">
+        <div class="date-forecast">${day}</div>
+        <div class="weather-icon">⛈</div>
+        <div class="forecast-temperature">
+          <span class="temperature-deg">12</span> 9
+        </div>
+      </div>
+    `;
+  });
+}
+displayForecast();
 // Add submit event listener to the form
 form.addEventListener("submit", submitButton);
 
