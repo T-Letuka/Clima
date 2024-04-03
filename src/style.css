@@ -97,3 +97,25 @@ svg {
   box-sizing: border-box;
   display: block;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+}
+
+.date-forecast {
+  font-size: 16px;
+  color: #494b4e;
+  margin-bottom: 12px;
+}
+.temperature-deg {
+  color: #393a3b;
+}
+.forecast-temperature {
+  color: #7d7f83;
+  margin-top: 12px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
